@@ -1,0 +1,119 @@
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Super Kitty Piano</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+        
+    <style>
+
+        html {
+            display:table; 
+            width:100%;
+        }
+
+        body {
+            background-color: rgb(11, 55, 202);
+            display: table-cell; 
+            text-align: center; 
+            vertical-align:middle;
+        }
+        
+        .copyright {
+            color: rgb(255, 255, 255);
+            font-family: verdana;
+            font-size: 20px;
+        }
+        
+        .copyright.small {
+            font-size: 15px;
+        }
+
+        .copyright a {
+            color: rgb(233, 246, 255);
+        }
+
+        .copyright img {
+            margin-top: 20px;
+            width: 60px;
+        }
+        
+        .copyright.small img {
+            width: 20px;
+        }
+
+        .kitty{
+            width: 800px;
+        }
+
+        .rainbow {
+            background-image: -webkit-gradient( linear, left top, right top, color-stop(0.25, #f2f), color-stop(0.4, #22f), color-stop(0.55, rgb(3, 206, 206)), color-stop(0.7, rgb(2, 202, 2)), color-stop(0.85, rgb(252, 195, 7)), color-stop(1, #f22));
+            background-image: gradient( linear, left top, right top, color-stop(0.25, #f2f), color-stop(0.4, #22f), color-stop(0.55, rgb(3, 206, 206)), color-stop(0.7, rgb(2, 202, 2)), color-stop(0.85, rgb(252, 195, 7)), color-stop(1, #f22) );
+            color:transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            font-family: verdana;
+        }
+
+        .pew img {
+            width: 100px;
+        }
+        .pew img:hover {
+            box-shadow: 0 0 2px 1px black;
+        }
+    </style>
+
+    <script>
+        function pew(f, t) { 
+            var ac = new (window.AudioContext || window.webkitAudioContext)();
+            // create Oscillator node
+            var o = ac.createOscillator();
+
+            // set the sound type: sine, sqaure, triangle, sawtooth
+            o.type = 'triangle';
+            // set the sound frequency
+            o.frequency.setValueAtTime(f, ac.currentTime);
+            o.connect(ac.destination);
+            o.start();
+            // stop after t seconds
+            o.stop(ac.currentTime + t);
+        }
+    </script>
+</head>
+    
+<body>
+    <img class="kitty" src="images/super-kitty.gif" alt="Super Kitty Photo">
+    <br/>
+
+    <h1 class="rainbow">GIVE ME FIVE, LET'S PLAY SUPER KITTY PIANO</h1>
+    <br/>
+
+    <div class="pew">
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(261.6, 0.3)"/>
+        <img src="images/pew2.png" alt="Pew 2" onclick="pew(277.2, 0.3)"/>
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(293.7, 0.3)"/>
+        <img src="images/pew2.png" alt="Pew 2" onclick="pew(311.1, 0.3)"/>
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(329.6, 0.3)"/>
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(349.2, 0.3)"/>
+        <img src="images/pew2.png" alt="Pew 2" onclick="pew(370.0, 0.3)"/>
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(392.0, 0.3)"/>
+        <img src="images/pew2.png" alt="Pew 2" onclick="pew(415.3, 0.3)"/>
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(440.0, 0.3)"/>
+        <img src="images/pew2.png" alt="Pew 2" onclick="pew(466.2, 0.3)"/>
+        <img src="images/pew1.png" alt="Pew 1" onclick="pew(493.9, 0.3)"/>
+    </div>
+    <br/>
+    <p class="copyright">
+        <a href="http://superkittypiano.com">SuperKittyPiano.com</a>
+        by <img src="images/cloudemy-logo-plain.png"  alt="Cloudemy Logo"/> &copy; 2020
+    </p>
+    <p class="copyright small">
+        <img src="images/github.png" alt="Github Logo"/> Create your own 
+        <a href="https://github.com/zaheer/super-kitty-piano">Super Kitty Piano</a> 
+        from our Github page.
+    </p>
+
+</body>
+</html>
